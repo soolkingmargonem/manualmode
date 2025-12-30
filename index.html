@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Manual Mode – Strona Klanowa</title>
+<style>
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", serif;
+    background: url("https://i.imgur.com/7YVQZQk.jpg") center/cover fixed;
+    color: #f5e6c8;
+}
+#login, #content {
+    max-width: 900px;
+    margin: 80px auto;
+    background: rgba(20, 15, 10, 0.9);
+    border: 2px solid #a67c3b;
+    padding: 30px;
+    border-radius: 10px;
+}
+h1, h2 {
+    color: #e0b76a;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000;
+}
+input[type=password] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+    background: #2b1d10;
+    color: #f5e6c8;
+    border: 1px solid #a67c3b;
+}
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 16px;
+    background: linear-gradient(#c89b3c, #8a5a1f);
+    border: none;
+    color: #1b1208;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    filter: brightness(1.1);
+}
+.section {
+    margin-top: 40px;
+}
+ul {
+    list-style: square;
+}
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #bfa77a;
+}
+.hidden {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="login">
+    <h1>Manual Mode</h1>
+    <p style="text-align:center;">🔒 Strefa klanowa – dostęp tylko dla graczy manualnych</p>
+    <input type="password" id="pass" placeholder="Wpisz hasło klanu">
+    <button onclick="checkPassword()">Wejdź</button>
+    <p id="error" style="color:#ff6b6b; text-align:center;"></p>
+</div>
+
+<div id="content" class="hidden">
+    <h1>🛡 Manual Mode</h1>
+    <p style="text-align:center;"><i>„Człowiek nad botem. Skill nad skryptem.”</i></p>
+
+    <div class="section">
+        <h2>📜 O klanie</h2>
+        <p>
+            Manual Mode to klan graczy Margonem grających w 100% manualnie.
+            Zero botów, zero wspomagaczy, czysta gra i uczciwa rywalizacja.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>⚔ Regulamin</h2>
+        <ul>
+            <li>Zakaz używania botów, skryptów i makr</li>
+            <li>Szacunek wobec klanu i innych graczy</li>
+            <li>Pomoc klanowa > prywatne korzyści</li>
+            <li>Aktywność = ranga</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>👥 Członkowie</h2>
+        <ul>
+            <li><b>Leader:</b> Nick</li>
+            <li><b>Officer:</b> Nick</li>
+            <li><b>Member:</b> Nick</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🗓 Eventy / Plany</h2>
+        <ul>
+            <li>Exp party – weekend</li>
+            <li>Wypady PvP</li>
+            <li>Bossy klanowe</li>
+        </ul>
+    </div>
+
+    <footer>
+        © Manual Mode | Margonem | Gramy manualnie
+    </footer>
+</div>
+
+<script>
+const PASSWORD = "manualmode";
+
+function checkPassword() {
+    const input = document.getElementById("pass").value;
+    if (input === PASSWORD) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("content").classList.remove("hidden");
+    } else {
+        document.getElementById("error").innerText = "Błędne hasło.";
+    }
+}
+</script>
+
+</body>
+</html>
